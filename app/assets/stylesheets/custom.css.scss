@@ -5,11 +5,19 @@ $grayLighter: #eee;
 $blue: #3bbfce;
 
 body {
-	padding: 70px;
+  padding: 70px;
+}
+
+textarea {
+  resize: vertical;
 }
 
 .center {
   text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 10px;
 }
 
 /* typography */
@@ -37,19 +45,6 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-}
-
-
-/* miscellaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 
 /* footer */
@@ -89,12 +84,79 @@ footer ul li {
   box-sizing: border-box;
 }
 
-.formwrapper{
-    box-shadow: 2px 2px 8px #aaa;
-    -webkit-box-shadow: 2px 2px 8px #aaa;
-    -moz-box-shadow: 2px 2px 8px #aaa;
-    background-color: #ffffff;
-    padding: 10px;
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* sidebar */
+
+aside {
+  section {
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:first-child {
+      border: 0;
+      padding-top: 0;
+    }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1.5;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
+  }
+}
+
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+/* error explanation 
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .alert-danger;
+  @extend .alert;
+}
+*/
+#error_explanation {
+  color: #f00;
+  ul {
+    @extend .alert;
+    @extend .alert-danger;
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error; /* this gives color to fields*/
+}
+
+
+div.alert.alert-error {
+  background-color: #F5D5A9;
 }
 
 .users {
@@ -110,3 +172,31 @@ footer ul li {
   }
 }
 
+/* microposts */
+
+.microposts {
+  list-style: none;
+  margin: 10px 0 0 0;
+
+  li {
+    padding: 10px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+}
+.content {
+  display: block;
+}
+.timestamp {
+  color: #A2A2A2;
+}
+.gravatar {
+  float: left;
+  margin-right: 10px;
+}
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+    width: inherit;
+  }
+}

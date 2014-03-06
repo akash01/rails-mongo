@@ -1,5 +1,7 @@
 Mongoblog::Application.routes.draw do
   
+  get "microposts/create"
+  get "microposts/destroy"
   root "static_pages#home"
 
   get "home" => "static_pages#home"
@@ -9,6 +11,7 @@ Mongoblog::Application.routes.draw do
   
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
+  resources :microposts, only: [:create, :destroy]
 
   get "signup" => "users#new"
   get "signin" => "sessions#new"

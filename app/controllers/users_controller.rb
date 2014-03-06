@@ -15,6 +15,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page],:per_page => 2)
   end
 
   def create
@@ -51,10 +52,6 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:firstname,:lastname,:email,:password,:password_confirmation)
-    end
-
-    def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless session[:user_id]
     end
 
     def correct_user

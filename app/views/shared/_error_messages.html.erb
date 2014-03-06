@@ -5,8 +5,8 @@
 	</script>
 <% end %>
 
-<% if @post %>
-	<% @post.errors.full_messages.each do |error|%>
+<% if @micropost %>
+	<% @micropost.errors.full_messages.each do |error|%>
 		<script>
 		  var msg="<%= error %>";
 		  toastr.error(msg)

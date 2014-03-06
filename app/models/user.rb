@@ -12,6 +12,8 @@ class User
   
   index({ email: 1 }, { unique: true })
 
+  has_many :microposts, dependent: :destroy
+  
   before_save { self.email = email.downcase }
   has_secure_password
 

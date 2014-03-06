@@ -13,7 +13,7 @@ module SessionsHelper
   end
 
   def current_user
-    @current_user ||= User.find(session[:user_id])
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def current_user?(user)
@@ -31,4 +31,7 @@ module SessionsHelper
     flash[:notice] = "Logout successful"
   end
 
+  def signed_in_user
+   redirect_to signin_url, notice: "Please sign in." unless session[:user_id]
+  end
 end

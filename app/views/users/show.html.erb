@@ -1,5 +1,6 @@
 <% @title = @user.firstname %>
  <%= render 'shared/error_messages' %> 
+
 <aside class="row">
 	<section class="col col-lg-3">
 		<h1>
@@ -7,6 +8,17 @@
 			<%= @user.firstname %>	
 		</h1>
 	</section>
+
+
+	<div class="col col-lg-9 pull-right">
+		<% if @user.microposts.any? %>
+		  <h3>Microposts (<%= @user.microposts.count %>)</h3>
+		  <ol class="microposts">
+		    <%= render @microposts %>
+		  </ol>
+		  <%= will_paginate @microposts %>
+		<% end %>
+	</div>
 </aside>
 
 

@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-    
   end
 
   def create
@@ -20,4 +19,7 @@ class SessionsController < ApplicationController
     redirect_to root_url
   end
 
+  # def signed_in_user
+  #   redirect_to signin_url, notice: "Please sign in." unless session[:user_id]
+  # end
 end
