@@ -40,6 +40,10 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+
+gem 'will_paginate_mongoid'
+gem 'will_paginate-bootstrap'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 

@@ -8,6 +8,7 @@ class User
   field :lastname, type: String
   field :password_digest, type: String
   field :email, type: String 
+  field :admin, type: Boolean, default: false
   
   index({ email: 1 }, { unique: true })
 

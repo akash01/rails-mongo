@@ -1,0 +1,10 @@
+<% @title =  'All users' %>
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+  <%= render @users %> <!--! this will call the user partial and automatically iterate the users object -->
+</ul>
+
+<%= will_paginate %>
