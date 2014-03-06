@@ -1,0 +1,24 @@
+<% flash.each do |name,message|%>
+	<script>
+	  var msg="<%= message %>";
+	  toastr.info(msg)
+	</script>
+<% end %>
+
+<% if @post %>
+	<% @post.errors.full_messages.each do |error|%>
+		<script>
+		  var msg="<%= error %>";
+		  toastr.error(msg)
+		</script>
+	<% end %>
+<% end %>
+
+<% if @user %>
+	<% @user.errors.full_messages.each do |error|%>
+		<script>
+		  var msg="<%= error %>";
+		  toastr.error(msg)
+		</script>
+	<% end %>
+<% end %>

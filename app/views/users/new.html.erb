@@ -1,2 +1,12 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% @title = "Sign up" %>
+<h1>Sign up</h1>
+
+<%= render 'shared/error_messages' %>
+
+<div class="formwrapper">
+	<h4 class="text-center"></h4>
+	<%= render 'form' %>
+</div>
+
+
+<%= link_to 'Back', users_path %>

@@ -6,6 +6,7 @@ Mongoblog::Application.routes.draw do
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
   
+  resources :users
   get "signup" => "users#new"
   #root 'users#index'
   root "static_pages#home"
